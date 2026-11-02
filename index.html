@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Hunt Tracker</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Job Hunt Tracker</h1>
+
+    </header>
+    <form id="job-form">
+        <label for="company">company</label>
+        <input type="text" id="company" name="company">
+        <label for="role">Role</label>
+        <input type="text" id="role" name="Role">
+        <select id="job-stat" name="job-stat">
+            <option value="rejected">rejected</option>
+            <option value="wishlist">wishlist</option>
+            <option value="applied">applied</option>
+            <option value="offer">offer</option>
+            <option value="interview">interview</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+    <main id="board">
+        <section data-status="wishlist">
+            <h2>wishlist</h2>
+            <div class="cards">
+
+            </div>
+
+        </section>
+        <section data-status="applied">
+            <h2>applied</h2>
+            <div class="cards">
+
+            </div>
+
+        </section>
+        <section data-status="interview">
+            <h2>interview</h2>
+            <div class="cards">
+
+            </div>
+
+        </section>
+        <section data-status="offer">
+            <h2>offer</h2>
+            <div class="cards">
+
+            </div>
+ 
+        </section>
+        <section data-status="rejected">
+            <h2>rejected</h2>
+            <div class="cards">
+
+            </div>
+
+        </section>
+
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
