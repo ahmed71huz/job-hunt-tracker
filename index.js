@@ -2,7 +2,7 @@
 const form = document.querySelector("#job-form")
 const board = document.querySelector("#board")
 
-let applications = [];
+let applications = JSON.parse (localStorage.getItem("application"))|| [];
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -42,7 +42,9 @@ function renderBoard() {
         const column = document.querySelector(`[data-status="${application.status}"] .cards`);
         column.appendChild(card);
     })
-
+    
+    const save = JSON.stringify(applications)
+    localStorage.setItem(`application`, save)
 
 }
 board.addEventListener("click", function (event) {
@@ -79,6 +81,7 @@ board.addEventListener("change", function (event) {
 })
 
 
+renderBoard()
 
 
 
