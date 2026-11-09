@@ -1,0 +1,167 @@
+:root {
+    --bg: #f4f1ec;
+    --surface: #ffffff;
+    --text: #2b2622;
+    --muted: #7a7068;
+    --border: #e3ddd4;
+    --primary: #3b5bdb;
+    --danger: #c92a2a;
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+header h1 {
+    margin: 0 0 20px;
+    font-size: 1.8rem;
+}
+
+/* ---------- Form ---------- */
+#job-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+#job-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    font: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+}
+
+button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--primary);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: #2f4bc0;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ---------- Board ---------- */
+#board {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+#board section {
+    flex: 1;
+    min-width: 190px;
+    padding: 12px;
+    background: #ebe6de;
+    border-radius: var(--radius);
+}
+
+#board h2 {
+    margin: 0 0 12px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+/* colour strip per column */
+#board section[data-status="wishlist"] { border-top: 4px solid #868e96; }
+#board section[data-status="applied"] { border-top: 4px solid #4c6ef5; }
+#board section[data-status="interview"] { border-top: 4px solid #f59f00; }
+#board section[data-status="offer"] { border-top: 4px solid #2f9e44; }
+#board section[data-status="rejected"] { border-top: 4px solid #e03131; }
+
+.cards {
+    min-height: 40px;
+}
+
+/* ---------- Card ---------- */
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.card select {
+    flex: 1;
+    min-width: 90px;
+    padding: 5px 6px;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.card button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.card button:hover {
+    background: var(--danger);
+    color: #fff;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+    body {
+        padding: 14px;
+    }
+
+    #board {
+        flex-direction: column;
+    }
+
+    #board section {
+        width: 100%;
+    }
+}
