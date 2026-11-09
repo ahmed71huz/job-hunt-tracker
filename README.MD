@@ -2,7 +2,7 @@
 
 A Kanban-style board to track job applications from wishlist to offer. Everything is saved in the browser, so your board is still there after a refresh.
 
-**Live demo:** <LINK>
+**Live demo:** [<LINK>](https://ahmed71huz.github.io/job-hunt-tracker/)
 
 ![Screenshot](screenshot.png)
 
